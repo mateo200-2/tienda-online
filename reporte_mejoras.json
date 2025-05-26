@@ -1,0 +1,126 @@
+{
+  "fecha": "17 de mayo de 2025",
+  "mejoras": {
+    "funcionalidades_nuevas": [
+      {
+        "descripcion": "Roles de Usuario",
+        "detalles": [
+          "Se agregó un campo 'rol' en la tabla 'usuarios' para diferenciar entre administradores y usuarios.",
+          "Se implementó la lógica para que los administradores tengan acceso exclusivo a ciertas páginas y funcionalidades."
+        ]
+      },
+      {
+        "descripcion": "Formulario de Registro",
+        "detalles": [
+          "Se añadió la opción de seleccionar el rol (usuario o administrador) al registrarse.",
+          "Se limitó el número de administradores a un máximo de 3."
+        ]
+      },
+      {
+        "descripcion": "Protección de Páginas",
+        "detalles": [
+          "Se protegieron páginas como 'agregar_producto.php' y 'ver_usuarios.php' para que solo los administradores puedan acceder."
+        ]
+      },
+      {
+        "descripcion": "Visualización de Usuarios",
+        "detalles": [
+          "Se creó la página 'ver_usuarios.php' para que los administradores puedan ver una lista de usuarios registrados."
+        ]
+      },
+      {
+        "descripcion": "Carrito de Compras",
+        "detalles": [
+          "Se corrigió la lógica para que los productos se asocien al 'usuario_id' de la sesión en lugar de un valor fijo."
+        ]
+      },
+      {
+        "descripcion": "Botones de Navegación",
+        "detalles": [
+          "Se agregó un botón en el 'index.php' para que los administradores puedan acceder a la página de usuarios registrados."
+        ]
+      }
+    ],
+    "mejoras_de_diseño": [
+      {
+        "descripcion": "Estilo de Formularios",
+        "detalles": [
+          "Se aplicaron estilos profesionales a los formularios en 'registro.php', 'login.php', 'agregar_producto.php' y 'editar_producto.php'.",
+          "Se añadió la opción de ver contraseñas en los formularios de registro e inicio de sesión."
+        ]
+      },
+      {
+        "descripcion": "Diseño Responsivo",
+        "detalles": [
+          "Se ajustaron los estilos en 'style.css' para mejorar la visibilidad en dispositivos móviles.",
+          "Se implementaron cuadrículas para organizar los productos y se añadieron bordes redondeados y sombras suaves."
+        ]
+      },
+      {
+        "descripcion": "Menú de Categorías",
+        "detalles": [
+          "Se añadió un menú de categorías con íconos representativos."
+        ]
+      },
+      {
+        "descripcion": "Sección de Ofertas",
+        "detalles": [
+          "Se creó una sección de 'Venta Flash' con tarjetas que resaltan descuentos."
+        ]
+      },
+      {
+        "descripcion": "Carrusel de Promociones",
+        "detalles": [
+          "Se implementó un slider para mostrar promociones principales."
+        ]
+      }
+    ]
+  },
+  "correcciones": {
+    "sql": [
+      {
+        "descripcion": "Error de Clave Foránea en el Carrito",
+        "detalles": "Se corrigió el error 'SQLSTATE[23000]: Integrity constraint violation' al insertar productos en el carrito. Ahora se utiliza el 'usuario_id' de la sesión."
+      }
+    ],
+    "php": [
+      {
+        "descripcion": "Protección de Páginas",
+        "detalles": "Se corrigió la lógica para verificar el rol del usuario antes de permitir el acceso a páginas restringidas."
+      },
+      {
+        "descripcion": "Validación de Imágenes",
+        "detalles": "Se añadió validación para verificar si las URLs de imágenes son válidas y accesibles antes de guardarlas en la base de datos."
+      },
+      {
+        "descripcion": "Sesiones",
+        "detalles": "Se añadió 'session_start();' en archivos donde faltaba, para asegurar que las variables de sesión estén disponibles."
+      }
+    ],
+    "css": [
+      {
+        "descripcion": "Consolidación de Estilos",
+        "detalles": "Se consolidaron todos los estilos en un único archivo 'style.css' para evitar confusiones."
+      },
+      {
+        "descripcion": "Estilo de Formularios",
+        "detalles": "Se corrigieron problemas de diseño en los formularios, asegurando que sean interactivos y visualmente atractivos."
+      }
+    ]
+  },
+  "archivos_modificados": [
+    "database.sql",
+    "registro.php",
+    "login.php",
+    "agregar_producto.php",
+    "editar_producto.php",
+    "index.php",
+    "ver_usuarios.php",
+    "style.css"
+  ],
+  "proximos_pasos": [
+    "Implementar funcionalidades para editar y eliminar usuarios desde 'ver_usuarios.php'.",
+    "Optimizar el rendimiento del sitio para grandes volúmenes de datos.",
+    "Añadir pruebas automatizadas para validar las funcionalidades."
+  ]
+}
